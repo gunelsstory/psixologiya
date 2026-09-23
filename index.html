@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmoniya | Peşəkar Psixoloji Dəstək və Terapiya</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #7F8C8D;
+            --accent: #C5A059; /* Premium qızılı/bürünc vurğu */
+            --accent-light: #F4EEDC;
+            --bg-color: #FAF8F5; /* Sakitləşdirici pastel krem tonu */
+            --card-bg: #FFFFFF;
+            --text-main: #2C3E50;
+            --text-muted: #6E7B82;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: #fff !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            background-color: #b08d4b;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(244,238,225,0.5) 0%, rgba(250,248,245,1) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-content h1 span {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Section Common */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header span {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img-box {
+            position: relative;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--primary);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-badge h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .about-badge p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.04);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.08);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: #fff;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .pricing-card {
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .pricing-card.featured {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card.featured h3 {
+            color: #fff;
+        }
+
+        .pricing-card p.desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card.featured p.desc {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card.featured .price {
+            color: var(--accent);
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-card.featured .price span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+
+        .pricing-features li i {
+            color: var(--accent);
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline-dark {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .pricing-card.featured .pricing-btn:hover {
+            background: #b08d4b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-about .logo {
+            color: #fff;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            max-width: 350px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--accent);
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .services-grid, .pricing-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Harmoniya<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Ana Səhifə</a></li>
+                <li><a href="#about">Haqqımızda</a></li>
+                <li><a href="#services">Xidmətlər</a></li>
+                <li><a href="#pricing">Qiymətlər</a></li>
+                <li><a href="#pricing" class="nav-btn">Seans Seç</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Daxili hüzurunuza və <span>özünüzü kəşfə</span> doğru ilk addım</h1>
+                    <p>Peşəkar psixoloji dəstək ilə həyatınızdakı çətinliklərin öhdəsindən gəlin, emosional tarazlığınızı bərpa edin və inamla irəliləyin.</p>
+                    <div class="hero-btns">
+                        <a href="#pricing" class="btn-primary">Seans Qiymətləri <i class="fas fa-arrow-right"></i></a>
+                        <a href="#about" class="btn-secondary">Ətraflı Öyrön</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Psixoloji Dəstək">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-box">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800" alt="Peşəkar Psixoloq">
+                    <div class="about-badge">
+                        <h3>8+</h3>
+                        <p>İllik Təcrübə</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span>Peşəkar Yanaşma</span>
+                    <h3>Sizi dinləyən, anlayan və dəstəkləyən mütəxəssis</h3>
+                    <p>Hər insanın daxili dünyası bənzərsizdir. Terapiya prosesində məqsədimiz sizə təhlükəsiz, mühakimə olunmayan və dəstəkləyici bir mühit yaratmaqdır. Elmi əsaslı metodlarla emosional blokları aradan qaldırmağa kömək edirik.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Məxfilik Zəmanəti</h4>
+                                <p>Bütün seans məlumatları tamamilə gizli saxlanılır.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Elmi Metodlar</h4>
+                                <p>Kognitiv Davranışçı Terapiya (KDT) və digər sübuta əsaslanan yanaşmalar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <span>İxtisas Sahələrimiz</span>
+                <h2>Hansı mövzularda dəstək ala bilərsiniz?</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Fərdi Terapiya</h3>
+                    <p>Anksiyete, depressiya, stres, özgüvən problemi və emosional çətinliklərlə mübarizədə fərdi dəstək.</p>
+                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cütlük və Ailə Terapiyası</h3>
+                    <p>Münasibətlərdə ünsiyyət problemi, fikir ayrılıqları və ailədaxili harmoniyanın bərpası üzrə seanslar.</p>
+                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Şəxsi İnkişaf</h3>
+                    <p>Hədəf təyini, həyat balansının qurulması, motivasiya və daxili potensialın kəşf edilməsi.</p>
+                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span>İnvestisiya</span>
+                <h2>Seans Qiymətləri və Paketlər</h2>
+            </div>
+            <div class="pricing-grid">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card">
+                    <h3>Fərdi Seans</h3>
+                    <p class="desc">Tək nəfərlik online və ya əyani konsultasiya</p>
+                    <div class="price">60 ₼ <span>/ seans</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 50 dəqiqəlik seans</li>
+                        <li><i class="fas fa-check"></i> Online və ya Əyani format</li>
+                        <li><i class="fas fa-check"></i> Fərdi yanaşma planı</li>
+                        <li><i class="fas fa-times" style="color: #ccc;"></i> Əlavə materiallar</li>
+                    </ul>
+                    <a href="#" class="pricing-btn btn-outline-dark">Seçim Et</a>
+                </div>
+
+                <!-- Pricing Card 2 (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Ən Populyar</div>
+                    <h3>Aylıq Paket</h3>
+                    <p class="desc">Davamlı və dərin nəticələr əldə etmək üçün</p>
+                    <div class="price">200 ₼ <span>/ 4 seans</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 4 ədəd fərdi seans (50 dq)</li>
+                        <li><i class="fas fa-check"></i> Seanslararası dəstək (Chat)</li>
+                        <li><i class="fas fa-check"></i> Ev tapşırıqları və testlər</li>
+                        <li><i class="fas fa-check"></i> 15% qənaət imkanı</li>
+                    </ul>
+                    <a href="#" class="pricing-btn">Paketi Seç</a>
+                </div>
+
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card">
+                    <h3>Cütlük Terapiyası</h3>
+                    <p class="desc">Ailə və münasibət konsultasiyası</p>
+                    <div class="price">90 ₼ <span>/ seans</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 60 dəqiqəlik seans</li>
+                        <li><i class="fas fa-check"></i> İki nəfərlik birgə qiymətləndirmə</li>
+                        <li><i class="fas fa-check"></i> Ünsiyyət texnikaları</li>
+                        <li><i class="fas fa-check"></i> Ev tapşırıqları</li>
+                    </ul>
+                    <a href="#" class="pricing-btn btn-outline-dark">Seçim Et</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">Harmoniya<span>.</span></a>
+                    <p>Peşəkar psixoloji dəstək ilə hər zaman yanınızdayıq. Daxili rahatlığınız bizimprioritetimizdir.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Səhifələr</h4>
+                    <ul>
+                        <li><a href="#hero">Ana Səhifə</a></li>
+                        <li><a href="#about">Haqqımızda</a></li>
+                        <li><a href="#services">Xidmətlər</a></li>
+                        <li><a href="#pricing">Qiymətlər</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Əlaqə</h4>
+                    <ul>
+                        <li><a href="tel:+994501234567"><i class="fas fa-phone-alt"></i> +994 (50) 123-45-67</a></li>
+                        <li><a href="mailto:info@harmoniya.az"><i class="fas fa-envelope"></i> info@harmoniya.az</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bakı şəhəri, Azərbaycan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Harmoniya Psixologiya Mərkəzi. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
