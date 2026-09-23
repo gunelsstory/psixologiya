@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmoniya | Peşəkar Psixoloji Dəstək və Terapiya</title>
+    <title>Uşaq və Yeniyetmə Psixologiyası Mərkəzi</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -11,14 +11,14 @@
     
     <style>
         :root {
-            --primary: #2C3E50;
+            --primary: #2C4A52; /* Sakitləşdirici tünd göyümtül-yaşıl ton */
             --secondary: #7F8C8D;
-            --accent: #C5A059; /* Premium qızılı/bürünc vurğu */
-            --accent-light: #F4EEDC;
-            --bg-color: #FAF8F5; /* Sakitləşdirici pastel krem tonu */
+            --accent: #D4A373; /* İsti, uşaq və ailə dostu pastel qızılı/qum tonu */
+            --accent-light: #FAEDCD;
+            --bg-color: #FCFBF7; 
             --card-bg: #FFFFFF;
-            --text-main: #2C3E50;
-            --text-muted: #6E7B82;
+            --text-main: #2C4A52;
+            --text-muted: #607274;
             --transition: all 0.3s ease;
         }
 
@@ -44,7 +44,6 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,10 +56,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(250, 248, 245, 0.95);
+            background: rgba(252, 251, 247, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            border-bottom: 1px solid rgba(212, 163, 115, 0.2);
             transition: var(--transition);
         }
 
@@ -72,11 +71,11 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .logo span {
@@ -96,7 +95,6 @@
             font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
-            position: pointer;
         }
 
         .nav-links a:hover {
@@ -112,15 +110,8 @@
         }
 
         .nav-btn:hover {
-            background-color: #b08d4b;
+            background-color: #bc8b57;
             transform: translateY(-2px);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary);
         }
 
         /* Hero Section */
@@ -129,7 +120,7 @@
             min-height: 90vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(244,238,225,0.5) 0%, rgba(250,248,245,1) 100%);
+            background: linear-gradient(135deg, rgba(250,237,205,0.4) 0%, rgba(252,251,247,1) 100%);
         }
 
         .hero-grid {
@@ -140,7 +131,7 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.3rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             color: var(--primary);
@@ -178,6 +169,7 @@
 
         .btn-primary:hover {
             background-color: var(--accent);
+            color: var(--primary);
         }
 
         .btn-secondary {
@@ -196,18 +188,12 @@
             color: #fff;
         }
 
-        .hero-image {
-            position: relative;
-        }
-
         .hero-image-card {
             background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.08);
-            border: 1px solid rgba(197, 160, 89, 0.15);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(44, 74, 82, 0.08);
+            border: 1px solid rgba(212, 163, 115, 0.2);
         }
 
         .hero-image-card img {
@@ -340,14 +326,14 @@
             background: var(--card-bg);
             padding: 3rem 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.04);
-            border: 1px solid rgba(197, 160, 89, 0.1);
+            box-shadow: 0 10px 30px rgba(44, 74, 82, 0.04);
+            border: 1px solid rgba(212, 163, 115, 0.15);
             transition: var(--transition);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.08);
+            box-shadow: 0 20px 40px rgba(44, 74, 82, 0.08);
             border-color: var(--accent);
         }
 
@@ -386,10 +372,6 @@
             transition: var(--transition);
         }
 
-        .service-link:hover {
-            gap: 0.8rem;
-        }
-
         /* Pricing Section */
         .pricing {
             background-color: #fff;
@@ -407,7 +389,7 @@
             border-radius: 20px;
             padding: 3rem 2rem;
             text-align: center;
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(212, 163, 115, 0.2);
             position: relative;
             transition: var(--transition);
         }
@@ -416,7 +398,7 @@
             background: var(--primary);
             color: #fff;
             transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15);
+            box-shadow: 0 20px 40px rgba(44, 74, 82, 0.15);
         }
 
         .pricing-badge {
@@ -526,7 +508,7 @@
         }
 
         .pricing-card.featured .pricing-btn:hover {
-            background: #b08d4b;
+            background: #bc8b57;
         }
 
         /* Footer */
@@ -612,25 +594,17 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
             .hero-grid, .about-grid, .services-grid, .pricing-grid, .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.6rem;
             }
-
             .nav-links {
                 display: none;
             }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .pricing-card.featured {
                 transform: none;
             }
@@ -642,7 +616,7 @@
     <!-- Header / Navbar -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Harmoniya<span>.</span></a>
+            <a href="#" class="logo">Uşaq və Yeniyetmə <span>Psixologiyası</span></a>
             <ul class="nav-links">
                 <li><a href="#hero">Ana Səhifə</a></li>
                 <li><a href="#about">Haqqımızda</a></li>
@@ -650,9 +624,6 @@
                 <li><a href="#pricing">Qiymətlər</a></li>
                 <li><a href="#pricing" class="nav-btn">Seans Seç</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
@@ -661,16 +632,16 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>Daxili hüzurunuza və <span>özünüzü kəşfə</span> doğru ilk addım</h1>
-                    <p>Peşəkar psixoloji dəstək ilə həyatınızdakı çətinliklərin öhdəsindən gəlin, emosional tarazlığınızı bərpa edin və inamla irəliləyin.</p>
+                    <h1>Övladınızın daxili dünyasını kəşf edin və <span>sağlam gələcək</span> qurun</h1>
+                    <p>Uşaq və yeniyetmə dövrünün həssas mərhələlərində peşəkar psixoloji dəstək ilə onların emosional inkişafına və özünəinamına dəstək oluruq.</p>
                     <div class="hero-btns">
-                        <a href="#pricing" class="btn-primary">Seans Qiymətləri <i class="fas fa-arrow-right"></i></a>
-                        <a href="#about" class="btn-secondary">Ətraflı Öyrön</a>
+                        <a href="#pricing" class="btn-primary">Seans Qiymətləri (AZN) <i class="fas fa-arrow-right"></i></a>
+                        <a href="#about" class="btn-secondary">Ətraflı Öyrən</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-card">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Psixoloji Dəstək">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=800" alt="Uşaq və Yeniyetmə Psixologiyası">
                     </div>
                 </div>
             </div>
@@ -682,30 +653,30 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-img-box">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800" alt="Peşəkar Psixoloq">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" alt="Yeniyetmə Psixologiyası">
                     <div class="about-badge">
-                        <h3>8+</h3>
+                        <h3>10+</h3>
                         <p>İllik Təcrübə</p>
                     </div>
                 </div>
                 <div class="about-text">
-                    <span>Peşəkar Yanaşma</span>
-                    <h3>Sizi dinləyən, anlayan və dəstəkləyən mütəxəssis</h3>
-                    <p>Hər insanın daxili dünyası bənzərsizdir. Terapiya prosesində məqsədimiz sizə təhlükəsiz, mühakimə olunmayan və dəstəkləyici bir mühit yaratmaqdır. Elmi əsaslı metodlarla emosional blokları aradan qaldırmağa kömək edirik.</p>
+                    <span>Peşəkar və Həssas Yanaşma</span>
+                    <h3>Uşaq və yeniyetmələr üçün təhlükəsiz və dəstəkləyici mühit</h3>
+                    <p>Hər bir yaş dövrünün özünəməxsus psixoloji xüsusiyyətləri var. Yeniyetməlik dövründəki ünsiyyət çətinlikləri, məktəb stresi, adaptasiya problemləri və davranış dəyişiklikləri zamanı uşaqlara və valideynlərə peşəkar istiqamət veririk.</p>
                     
                     <div class="about-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
                             <div>
-                                <h4>Məxfilik Zəmanəti</h4>
-                                <p>Bütün seans məlumatları tamamilə gizli saxlanılır.</p>
+                                <h4>Valideyn Məsləhəti</h4>
+                                <p>Ailədaxili ünsiyyətin gücləndirilməsi üçün birgə iş.</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
                             <div>
-                                <h4>Elmi Metodlar</h4>
-                                <p>Kognitiv Davranışçı Terapiya (KDT) və digər sübuta əsaslanan yanaşmalar.</p>
+                                <h4>Yaş Qrupuna Uyğun Metodlar</h4>
+                                <p>Oyun terapiyası, yeniyetmə koçinqi və KDT.</p>
                             </div>
                         </div>
                     </div>
@@ -719,32 +690,32 @@
         <div class="container">
             <div class="section-header">
                 <span>İxtisas Sahələrimiz</span>
-                <h2>Hansı mövzularda dəstək ala bilərsiniz?</h2>
+                <h2>Hansı istiqamətlərdə dəstək göstərilir?</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-child"></i>
                     </div>
-                    <h3>Fərdi Terapiya</h3>
-                    <p>Anksiyete, depressiya, stres, özgüvən problemi və emosional çətinliklərlə mübarizədə fərdi dəstək.</p>
-                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                    <h3>Uşaq Psixologiyası</h3>
+                    <p>Qorxular, aqressiv davranışlar, adaptasiya çətinlikləri və oyun terapiyası vasitəsilə emosional dəstək.</p>
+                    <a href="#pricing" class="service-link">Qiymətlərə bax <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>Cütlük və Ailə Terapiyası</h3>
-                    <p>Münasibətlərdə ünsiyyət problemi, fikir ayrılıqları və ailədaxili harmoniyanın bərpası üzrə seanslar.</p>
-                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                    <h3>Yeniyetmə Terapiyası</h3>
+                    <p>Yeniyetməlik böhranı, imtahan stresi, özgüvən əskikliyi, ünsiyyət problemi və gələcək hədəflərin müəyyənləşməsi.</p>
+                    <a href="#pricing" class="service-link">Qiymətlərə bax <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Şəxsi İnkişaf</h3>
-                    <p>Hədəf təyini, həyat balansının qurulması, motivasiya və daxili potensialın kəşf edilməsi.</p>
-                    <a href="#pricing" class="service-link">Seçimlərə bax <i class="fas fa-chevron-right"></i></a>
+                    <h3>Valideyn - Övlad Münasibətləri</h3>
+                    <p>Ailədaxili anlaşılmazlıqlar, sərhəd qoyma və qarşılıqlı empatiya bacarıqlarının inkişaf etdirilməsi.</p>
+                    <a href="#pricing" class="service-link">Qiymətlərə bax <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -755,50 +726,50 @@
         <div class="container">
             <div class="section-header">
                 <span>İnvestisiya</span>
-                <h2>Seans Qiymətləri və Paketlər</h2>
+                <h2>Seans Qiymətləri və Paketlər (AZN)</h2>
             </div>
             <div class="pricing-grid">
                 <!-- Pricing Card 1 -->
                 <div class="pricing-card">
-                    <h3>Fərdi Seans</h3>
-                    <p class="desc">Tək nəfərlik online və ya əyani konsultasiya</p>
+                    <h3>Uşaq Konsultasiyası</h3>
+                    <p class="desc">Oyun və sənət terapiyası elementləri ilə</p>
                     <div class="price">60 ₼ <span>/ seans</span></div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> 50 dəqiqəlik seans</li>
-                        <li><i class="fas fa-check"></i> Online və ya Əyani format</li>
-                        <li><i class="fas fa-check"></i> Fərdi yanaşma planı</li>
-                        <li><i class="fas fa-times" style="color: #ccc;"></i> Əlavə materiallar</li>
+                        <li><i class="fas fa-check"></i> Valideynlərlə qısa qiymətləndirmə</li>
+                        <li><i class="fas fa-check"></i> İnteraktiv metodika</li>
+                        <li><i class="fas fa-times" style="color: #ccc;"></i> Ev tapşırıqları təhlili</li>
                     </ul>
-                    <a href="#" class="pricing-btn btn-outline-dark">Seçim Et</a>
+                    <a href="#pricing" class="pricing-btn btn-outline-dark">Seçim Et</a>
                 </div>
 
                 <!-- Pricing Card 2 (Featured) -->
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">Ən Populyar</div>
-                    <h3>Aylıq Paket</h3>
-                    <p class="desc">Davamlı və dərin nəticələr əldə etmək üçün</p>
-                    <div class="price">200 ₼ <span>/ 4 seans</span></div>
+                    <div class="pricing-badge">Ən Çox Seçilən</div>
+                    <h3>Yeniyetmə Seansı</h3>
+                    <p class="desc">Yeniyetmələrlə fərdi dəstək və inkişaf</p>
+                    <div class="price">70 ₼ <span>/ seans</span></div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 4 ədəd fərdi seans (50 dq)</li>
-                        <li><i class="fas fa-check"></i> Seanslararası dəstək (Chat)</li>
-                        <li><i class="fas fa-check"></i> Ev tapşırıqları və testlər</li>
-                        <li><i class="fas fa-check"></i> 15% qənaət imkanı</li>
+                        <li><i class="fas fa-check"></i> 50 dəqiqəlik fərdi seans</li>
+                        <li><i class="fas fa-check"></i> İmtahan və məktəb stresi dəstəyi</li>
+                        <li><i class="fas fa-check"></i> Məxfilik və güvən mühiti</li>
+                        <li><i class="fas fa-check"></i> Valideynə ümumi istiqamət</li>
                     </ul>
-                    <a href="#" class="pricing-btn">Paketi Seç</a>
+                    <a href="#pricing" class="pricing-btn">Seçimi Et</a>
                 </div>
 
                 <!-- Pricing Card 3 -->
                 <div class="pricing-card">
-                    <h3>Cütlük Terapiyası</h3>
-                    <p class="desc">Ailə və münasibət konsultasiyası</p>
-                    <div class="price">90 ₼ <span>/ seans</span></div>
+                    <h3>Aylıq Paket (Yeniyetmə)</h3>
+                    <p class="desc">Davamlı və səmərəli nəticələr üçün</p>
+                    <div class="price">240 ₼ <span>/ 4 seans</span></div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 60 dəqiqəlik seans</li>
-                        <li><i class="fas fa-check"></i> İki nəfərlik birgə qiymətləndirmə</li>
-                        <li><i class="fas fa-check"></i> Ünsiyyət texnikaları</li>
-                        <li><i class="fas fa-check"></i> Ev tapşırıqları</li>
+                        <li><i class="fas fa-check"></i> 4 ədəd seans (50 dq)</li>
+                        <li><i class="fas fa-check"></i> Seanslararası valideyn dəstəyi</li>
+                        <li><i class="fas fa-check"></i> Fərdi inkişaf izlənməsi</li>
+                        <li><i class="fas fa-check"></i> Endirimli paket üstünlüyü</li>
                     </ul>
-                    <a href="#" class="pricing-btn btn-outline-dark">Seçim Et</a>
+                    <a href="#pricing" class="pricing-btn btn-outline-dark">Paketi Seç</a>
                 </div>
             </div>
         </div>
@@ -809,13 +780,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <a href="#" class="logo">Harmoniya<span>.</span></a>
-                    <p>Peşəkar psixoloji dəstək ilə hər zaman yanınızdayıq. Daxili rahatlığınız bizimprioritetimizdir.</p>
+                    <a href="#" class="logo">Uşaq və Yeniyetmə <span>Psixologiyası</span></a>
+                    <p>Övladınızın sağlam gələcəyi və emosional tarazlığı üçün peşəkar dəstək.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -831,13 +801,13 @@
                     <h4>Əlaqə</h4>
                     <ul>
                         <li><a href="tel:+994501234567"><i class="fas fa-phone-alt"></i> +994 (50) 123-45-67</a></li>
-                        <li><a href="mailto:info@harmoniya.az"><i class="fas fa-envelope"></i> info@harmoniya.az</a></li>
+                        <li><a href="mailto:info@psixologiya.az"><i class="fas fa-envelope"></i> info@psixologiya.az</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bakı şəhəri, Azərbaycan</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Harmoniya Psixologiya Mərkəzi. Bütün hüquqlar qorunur.</p>
+                <p>&copy; 2026 Uşaq və Yeniyetmə Psixologiyası Mərkəzi. Bütün hüquqlar qorunur.</p>
             </div>
         </div>
     </footer>
