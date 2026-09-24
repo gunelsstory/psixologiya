@@ -15,7 +15,7 @@
         :root {
             --primary: #2C4A52; /* Sakitləşdirici tünd göyümtül-yaşıl ton */
             --secondary: #7F8C8D;
-            --accent: #D4A373; /* İsti, uşaq və ailə dostu pastel qızılı/qum tonu */
+            --accent: #D4A373; /* İsti, pastel qızılı/qum tonu */
             --accent-light: #FAEDCD;
             --bg-color: #FCFBF7; 
             --card-bg: #FFFFFF;
@@ -69,25 +69,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100px;
+            height: 85px;
         }
 
         .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.75rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
             letter-spacing: 0.5px;
-        }
-
-        .logo-img {
-            height: 58px;
-            width: auto;
-            object-fit: contain;
-            display: block;
         }
 
         .logo span {
@@ -128,7 +118,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 170px 0 100px;
+            padding: 150px 0 90px;
             min-height: 90vh;
             display: flex;
             align-items: center;
@@ -142,9 +132,37 @@
             align-items: center;
         }
 
+        /* Cümlədən əvvəl yerləşən Loqo və Badge Stili */
+        .hero-logo-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-logo-img {
+            height: 75px; /* Loqonun aydın və böyük görünüş ölçüsü */
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(44, 74, 82, 0.1));
+        }
+
+        .hero-logo-tag {
+            display: inline-block;
+            background: rgba(212, 163, 115, 0.15);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(212, 163, 115, 0.3);
+        }
+
         .hero-content h1 {
-            font-size: 3.3rem;
-            line-height: 1.2;
+            font-size: 3.2rem;
+            line-height: 1.22;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
@@ -297,36 +315,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .feature-item i {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-top: 4px;
-        }
-
-        .feature-item h4 {
-            font-size: 1.05rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-
-        .feature-item p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
         /* Services Section */
         .services-grid {
             display: grid;
@@ -372,16 +360,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
-        }
-
-        .service-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
         }
 
         /* Pricing Section */
@@ -540,7 +518,7 @@
         .footer-about .logo {
             color: #fff;
             margin-bottom: 1rem;
-            display: inline-flex;
+            display: inline-block;
         }
 
         .footer-about p {
@@ -620,6 +598,9 @@
             .pricing-card.featured {
                 transform: none;
             }
+            .hero-logo-box {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -628,10 +609,7 @@
     <!-- Header / Navbar -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Insight Story Loqo" class="logo-img">
-                <span>Insight <span>Story</span></span>
-            </a>
+            <a href="#" class="logo">Insight <span>Story</span></a>
             <ul class="nav-links">
                 <li><a href="#hero">Ana Səhifə</a></li>
                 <li><a href="#about">Haqqımızda</a></li>
@@ -647,6 +625,13 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
+                    
+                    <!-- Cümlədən əvvəl yerləşən Böyük və Aydın Loqo Bloku -->
+                    <div class="hero-logo-box">
+                        <img src="logo.png" alt="Insight Story Loqo" class="hero-logo-img">
+                        <span class="hero-logo-tag">Psixoloji Dəstək Mərkəzi</span>
+                    </div>
+
                     <h1>Övladınızın daxili dünyasını kəşf edin və <span>sağlam gələcək</span> qurun</h1>
                     <p>Uşaq və yeniyetmə dövrünün həssas mərhələlərində peşəkar psixoloji dəstək ilə onların emosional inkişafına və özünəinamına dəstək oluruq.</p>
                     <div class="hero-btns">
@@ -774,10 +759,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <a href="#" class="logo">
-                        <img src="logo.png" alt="Insight Story Loqo" class="logo-img">
-                        <span>Insight<span> Story</span></span>
-                    </a>
+                    <a href="#" class="logo">Insight<span> Story</span></a>
                     <p>Övladınızın sağlam gələcəyi və emosional tarazlığı üçün peşəkar dəstək.</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/gunels_story/"><i class="fab fa-instagram"></i></a>
