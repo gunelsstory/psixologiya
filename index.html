@@ -69,7 +69,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 90px;
+            height: 85px;
         }
 
         .logo {
@@ -84,66 +84,162 @@
             color: var(--accent);
         }
 
-        .nav-links {
+        /* Həm Veb, Həm Mobil üçün Hamburger Düyməsi */
+        .hamburger-btn {
+            background: #fff;
+            border: 1px solid rgba(212, 163, 115, 0.35);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             display: flex;
-            list-style: none;
-            gap: 2.5rem;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(44, 74, 82, 0.05);
+            z-index: 1100;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.95rem;
+        .hamburger-btn:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--primary);
+            border-radius: 2px;
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
+        /* Aktiv olanda X formasına keçid */
+        .hamburger-btn.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-btn.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
-        .nav-btn {
+        /* Slide-over Drawer Menyu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(44, 74, 82, 0.4);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1050;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-drawer {
+            position: fixed;
+            top: 0;
+            right: -360px;
+            width: 320px;
+            max-width: 85%;
+            height: 100vh;
+            background: #FCFBF7;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+            z-index: 1060;
+            padding: 100px 2.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid rgba(212, 163, 115, 0.2);
+        }
+
+        .menu-drawer.active {
+            right: 0;
+        }
+
+        .drawer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .drawer-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 500;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .drawer-links a:hover {
+            color: var(--accent);
+            transform: translateX(6px);
+        }
+
+        .drawer-btn {
             background-color: var(--accent);
             color: #fff !important;
-            padding: 0.7rem 1.5rem;
+            padding: 0.85rem 1.6rem;
             border-radius: 50px;
-            transition: var(--transition);
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 600;
         }
 
-        .nav-btn:hover {
+        .drawer-btn:hover {
             background-color: #bc8b57;
-            transform: translateY(-2px);
+            transform: translateY(-2px) !important;
+        }
+
+        .drawer-footer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(212, 163, 115, 0.2);
+            padding-top: 1.5rem;
         }
 
         /* Hero Section */
         .hero {
-            padding: 135px 0 80px;
+            padding: 130px 0 80px;
             min-height: 90vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(250,237,205,0.4) 0%, rgba(252,251,247,1) 100%);
         }
 
-        /* Göstərdiyiniz qırmızı yer - Mərkəzi Böyük Loqo */
+        /* Mərkəzi Loqo */
         .hero-top-logo {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .hero-center-logo {
-            height: 110px; /* İstəyinizə görə böyük format */
+            height: 140px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 8px 18px rgba(44, 74, 82, 0.12));
+            filter: drop-shadow(0 8px 22px rgba(44, 74, 82, 0.12));
             transition: var(--transition);
         }
 
         .hero-center-logo:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px) scale(1.02);
         }
 
         .hero-grid {
@@ -308,36 +404,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .feature-item i {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-top: 4px;
-        }
-
-        .feature-item h4 {
-            font-size: 1.05rem;
-            color: var(--primary);
-            margin-bottom: 0.2rem;
-        }
-
-        .feature-item p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
         /* Services Section */
         .services-grid {
             display: grid;
@@ -383,16 +449,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
-        }
-
-        .service-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
         }
 
         /* Pricing Section */
@@ -617,22 +673,46 @@
             font-size: 0.9rem;
         }
 
+        /* Mobil üçün Minimalist və Kompakt Uyğunlaşdırma */
         @media (max-width: 992px) {
             .hero-grid, .about-grid, .services-grid, .pricing-grid, .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2.5rem;
+            }
+            .hero {
+                padding: 110px 0 60px;
             }
             .hero-content h1 {
-                font-size: 2.6rem;
+                font-size: 2.2rem;
             }
-            .nav-links {
-                display: none;
+            .hero-center-logo {
+                height: 95px; /* Mobildə daha proporsional */
             }
             .pricing-card.featured {
                 transform: none;
             }
-            .hero-center-logo {
-                height: 80px;
+            /* Mobildə düymələr daha səliqəli və minimalist */
+            .hero-btns {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            .service-card, .pricing-card {
+                padding: 2rem 1.5rem; /* Mobildə kartlar daha minimalist və yığcam */
+                border-radius: 16px;
+            }
+            .about-badge {
+                right: 10px;
+                bottom: -20px;
+                padding: 1.2rem 1.5rem;
+            }
+            .about-badge h3 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -643,21 +723,37 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">Insight <span>Story</span></a>
-            <ul class="nav-links">
-                <li><a href="#hero">Ana Səhifə</a></li>
-                <li><a href="#about">Haqqımızda</a></li>
-                <li><a href="#services">Xidmətlər</a></li>
-                <li><a href="#pricing">Qiymətlər</a></li>
-                <li><a href="#pricing" class="nav-btn">Seans Seç</a></li>
-            </ul>
+            
+            <!-- Həm Veb, Həm Mobil üçün Hamburger Düyməsi -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menyu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Slide-over Menyu və Arxa Fon -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="menu-drawer" id="menuDrawer">
+        <ul class="drawer-links">
+            <li><a href="#hero" class="menu-link">Ana Səhifə</a></li>
+            <li><a href="#about" class="menu-link">Haqqımızda</a></li>
+            <li><a href="#services" class="menu-link">Xidmətlər</a></li>
+            <li><a href="#pricing" class="menu-link">Qiymətlər</a></li>
+            <li><a href="#pricing" class="menu-link drawer-btn">Seans Seç</a></li>
+        </ul>
+        <div class="drawer-footer">
+            <p><i class="fas fa-envelope"></i> gunelsstory@gmail.com</p>
+            <p style="margin-top: 5px;"><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
 
-            <!-- Göstərdiyiniz qırmızı yer: Mərkəzi Loqo -->
+            <!-- Mərkəzi Loqo -->
             <div class="hero-top-logo">
                 <img src="logo.png" alt="Insight Story Loqo" class="hero-center-logo">
             </div>
@@ -819,6 +915,37 @@
             </div>
         </div>
     </footer>
+
+    <!-- Menyu İdarəetmə Skripti -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const menuDrawer = document.getElementById('menuDrawer');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function toggleMenu() {
+            hamburgerBtn.classList.toggle('active');
+            menuDrawer.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            hamburgerBtn.classList.remove('active');
+            menuDrawer.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    </script>
 
 </body>
 </html>
