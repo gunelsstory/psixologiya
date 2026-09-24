@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Story</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="ıcon.png">
+    <link rel="icon" type="image/png" href="icon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -73,11 +73,21 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
             letter-spacing: 0.5px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .logo span {
@@ -530,7 +540,7 @@
         .footer-about .logo {
             color: #fff;
             margin-bottom: 1rem;
-            display: inline-block;
+            display: inline-flex;
         }
 
         .footer-about p {
@@ -618,7 +628,10 @@
     <!-- Header / Navbar -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Insight <span>Story</span></a>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Insight Story Loqo" class="logo-img">
+                <span>Insight <span>Story</span></span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#hero">Ana Səhifə</a></li>
                 <li><a href="#about">Haqqımızda</a></li>
@@ -665,9 +678,6 @@
                     <span>Peşəkar və Həssas Yanaşma</span>
                     <h3>Uşaq və yeniyetmələr üçün təhlükəsiz və dəstəkləyici mühit</h3>
                     <p>Hər bir yaş dövrünün özünəməxsus psixoloji xüsusiyyətləri var. Yeniyetməlik dövründəki ünsiyyət çətinlikləri, məktəb stresi, adaptasiya problemləri və davranış dəyişiklikləri zamanı uşaqlara və valideynlərə peşəkar istiqamət veririk.</p>
-                    
-                   
-                    </div>
                 </div>
             </div>
         </div>
@@ -687,7 +697,6 @@
                     </div>
                     <h3>Uşaq Psixologiyası</h3>
                     <p>Qorxular, aqressiv davranışlar, adaptasiya çətinlikləri üçün emosional dəstək.</p>
-                    
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -695,7 +704,6 @@
                     </div>
                     <h3>Yeniyetmə Terapiyası</h3>
                     <p>Yeniyetməlik böhranı, imtahan stresi, özgüvən əskikliyi, ünsiyyət problemi və gələcək hədəflərin müəyyənləşməsi.</p>
-                    
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -703,7 +711,6 @@
                     </div>
                     <h3>Valideyn - Övlad Münasibətləri</h3>
                     <p>Ailədaxili anlaşılmazlıqlar, sərhəd qoyma və qarşılıqlı empatiya bacarıqlarının inkişaf etdirilməsi.</p>
-                    
                 </div>
             </div>
         </div>
@@ -713,7 +720,6 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-               
                 <h2>Seans Qiymətləri və Paketlər</h2>
             </div>
             <div class="pricing-grid">
@@ -768,11 +774,13 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <a href="#" class="logo">Insight<span> Story</span></a>
+                    <a href="#" class="logo">
+                        <img src="logo.png" alt="Insight Story Loqo" class="logo-img">
+                        <span>Insight<span> Story</span></span>
+                    </a>
                     <p>Övladınızın sağlam gələcəyi və emosional tarazlığı üçün peşəkar dəstək.</p>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/gunels_story/"><i class="fab fa-instagram"></i></a>
-                        
                     </div>
                 </div>
                 <div class="footer-col">
@@ -787,7 +795,6 @@
                 <div class="footer-col">
                     <h4>Əlaqə</h4>
                     <ul>
-                        
                         <li><a href="mailto:gunelsstory@gmail.com"><i class="fas fa-envelope"></i> gunelsstory@gmail.com</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bakı şəhəri, Azərbaycan</a></li>
                     </ul>
