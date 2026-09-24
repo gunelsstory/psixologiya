@@ -402,7 +402,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Services Section */
+        /* Services Section (Desktop) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -449,7 +449,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Pricing Section */
+        /* Pricing Section (Desktop) */
         .pricing {
             background-color: #fff;
         }
@@ -671,12 +671,17 @@
             font-size: 0.9rem;
         }
 
+        /* Slider Nöqtələri (Desktop-da gizlidir) */
+        .slider-dots {
+            display: none;
+        }
+
         /* ===================================================
-           YALNIZ MOBİL ÜÇÜN MİNİMALİST VƏ KOMPAKT FORMAT
+           YALNIZ MOBİL: MİNİMALİST VƏ SÜRÜŞDÜRÜLƏN SLIDER
            =================================================== */
         @media (max-width: 768px) {
             .container {
-                padding: 0 1.2rem; /* Yan kənar boşluqları yığcamlaşdırıldı */
+                padding: 0 1.2rem;
             }
 
             .nav-container {
@@ -707,7 +712,7 @@
             }
 
             .hero-center-logo {
-                height: 80px; /* Mobildə zərif və minimal loqo */
+                height: 80px;
             }
 
             .hero-grid {
@@ -720,7 +725,7 @@
             }
 
             .hero-content h1 {
-                font-size: 1.95rem; /* Çox böyük olan başlıq incəldi */
+                font-size: 1.95rem;
                 line-height: 1.3;
                 margin-bottom: 1rem;
             }
@@ -751,17 +756,17 @@
             }
 
             .hero-image-card img {
-                height: 230px; /* 400px-lik nəhəng şəkil incə kompakt ölçüyə gətirildi */
+                height: 230px;
                 border-radius: 10px;
             }
 
             /* Bölmə Başlıqları */
             section {
-                padding: 55px 0;
+                padding: 50px 0;
             }
 
             .section-header {
-                margin-bottom: 2.2rem;
+                margin-bottom: 1.8rem;
             }
 
             .section-header span {
@@ -812,15 +817,34 @@
                 margin-bottom: 1rem;
             }
 
-            /* Xidmət Kartları - Minimalist Formada */
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem; /* Nəhəng boşluqlar yığcamlaşdırıldı */
+            /* ==============================================
+               MOBİL SLİDER (XİDMƏT VƏ QİYMƏT SAHƏLƏRİ)
+               ============================================== */
+            .services-grid, .pricing-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                gap: 1rem;
+                padding: 1.5rem 1.2rem 1.8rem;
+                margin: 0 -1.2rem; /* Ekranın sağ və soluna tam çıxması üçün */
+                scrollbar-width: none; /* Firefox üçün gizlət */
             }
 
+            .services-grid::-webkit-scrollbar, 
+            .pricing-grid::-webkit-scrollbar {
+                display: none; /* Chrome/Safari scrollbar gizlət */
+            }
+
+            /* Xidmət Slayd Kartları */
             .service-card {
-                padding: 1.5rem 1.2rem; /* 3rem-lik nəhəng sahə yığcam oldu */
-                border-radius: 14px;
+                flex: 0 0 82%; /* İstifadəçi növbəti kartın ucunu görür */
+                max-width: 82%;
+                scroll-snap-align: center;
+                padding: 1.8rem 1.4rem;
+                border-radius: 16px;
+                box-shadow: 0 8px 20px rgba(44, 74, 82, 0.05);
             }
 
             .service-icon {
@@ -832,43 +856,48 @@
             }
 
             .service-card h3 {
-                font-size: 1.25rem;
+                font-size: 1.3rem;
                 margin-bottom: 0.5rem;
             }
 
             .service-card p {
-                font-size: 0.88rem;
+                font-size: 0.9rem;
                 line-height: 1.5;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0;
             }
 
-            /* Qiymət Kartları - Minimalist Formada */
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-
+            /* Qiymət Slayd Kartları */
             .pricing-card {
-                padding: 1.8rem 1.2rem; /* Kartlar zərif app kartı formasına salındı */
-                border-radius: 16px;
+                flex: 0 0 84%;
+                max-width: 84%;
+                scroll-snap-align: center;
+                padding: 2.2rem 1.4rem 1.6rem;
+                border-radius: 18px;
+                box-shadow: 0 8px 25px rgba(44, 74, 82, 0.06);
             }
 
             .pricing-card.featured {
-                transform: none; /* Mobildə böyüməni söndürürük ki, ekranı doldurmasın */
+                transform: none; /* Slider daxilində ölçü bərabərliyi */
+            }
+
+            .pricing-badge {
+                top: -12px;
+                font-size: 0.72rem;
+                padding: 0.25rem 0.8rem;
             }
 
             .pricing-card h3 {
-                font-size: 1.4rem;
-                margin-bottom: 0.3rem;
+                font-size: 1.45rem;
+                margin-bottom: 0.2rem;
             }
 
             .pricing-card p.desc {
                 font-size: 0.82rem;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1rem;
             }
 
             .price {
-                font-size: 2.1rem; /* 3rem-dən 2.1rem-ə endirildi */
+                font-size: 2.1rem;
                 margin-bottom: 1.2rem;
             }
 
@@ -888,6 +917,28 @@
             .pricing-btn {
                 padding: 0.75rem;
                 font-size: 0.9rem;
+            }
+
+            /* Slayder Göstərici Nöqtələri (Dots) */
+            .slider-dots {
+                display: flex;
+                justify-content: center;
+                gap: 7px;
+                margin-top: 0.8rem;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(212, 163, 115, 0.35);
+                transition: var(--transition);
+            }
+
+            .dot.active {
+                width: 22px;
+                border-radius: 10px;
+                background: var(--accent);
             }
 
             /* Footer */
@@ -993,7 +1044,9 @@
                 <span>İxtisas Sahələrimiz</span>
                 <h2>Hansı istiqamətlərdə dəstək göstərilir?</h2>
             </div>
-            <div class="services-grid">
+            
+            <!-- Xidmətlər Slider -->
+            <div class="services-grid" id="servicesSlider">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-child"></i>
@@ -1016,6 +1069,13 @@
                     <p>Ailədaxili anlaşılmazlıqlar, sərhəd qoyma və qarşılıqlı empatiya bacarıqlarının inkişaf etdirilməsi.</p>
                 </div>
             </div>
+
+            <!-- Xidmətlər üçün Mobil Slayder Nöqtələri -->
+            <div class="slider-dots" id="servicesDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </section>
 
@@ -1025,7 +1085,9 @@
             <div class="section-header">
                 <h2>Seans Qiymətləri və Paketlər</h2>
             </div>
-            <div class="pricing-grid">
+
+            <!-- Qiymətlər Slider -->
+            <div class="pricing-grid" id="pricingSlider">
                 <!-- Pricing Card 1 -->
                 <div class="pricing-card">
                     <h3>Uşaq Konsultasiyası</h3>
@@ -1069,6 +1131,13 @@
                     <a href="#pricing" class="pricing-btn btn-outline-dark">Paketi Seç</a>
                 </div>
             </div>
+
+            <!-- Qiymətlər üçün Mobil Slayder Nöqtələri -->
+            <div class="slider-dots" id="pricingDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </section>
 
@@ -1106,8 +1175,9 @@
         </div>
     </footer>
 
-    <!-- Menyu İdarəetmə Skripti -->
+    <!-- Menyu və Mobil Slider İdarəetmə Skripti -->
     <script>
+        // Hamburger Menyu Funksionallığı
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const menuDrawer = document.getElementById('menuDrawer');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -1135,6 +1205,32 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
         });
+
+        // Mobildə Sürüşdürmə Zamanı Nöqtələrin (Dots) Avtomatik Dəyişməsi
+        function setupSliderDots(sliderId, dotsContainerId) {
+            const slider = document.getElementById(sliderId);
+            const dotsContainer = document.getElementById(dotsContainerId);
+            if (!slider || !dotsContainer) return;
+            
+            const dots = dotsContainer.querySelectorAll('.dot');
+
+            slider.addEventListener('scroll', () => {
+                const scrollLeft = slider.scrollLeft;
+                const cardWidth = slider.querySelector('.service-card, .pricing-card').offsetWidth;
+                const activeIndex = Math.round(scrollLeft / cardWidth);
+
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }, { passive: true });
+        }
+
+        setupSliderDots('servicesSlider', 'servicesDots');
+        setupSliderDots('pricingSlider', 'pricingDots');
     </script>
 
 </body>
